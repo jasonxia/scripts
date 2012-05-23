@@ -1,0 +1,33 @@
+# Sets up no-password ssh-ing, including defining your own keys if they do not already exist
+#
+# param1 = user
+# param2 = server
+
+if [ ! $# -eq 2 ]; then
+  echo Usage: $0 username servername
+  echo You will then have to enter the password for username at servername
+  echo After running this, you will never have to enter that password again when using ssh
+  exit;
+fi
+
+# Note: rsa also generates a file with ".pub" extension - you must use that one
+myRSAkey=~/.ssh/id_rsa
+myDSAkey=~/.ssh/id_dsa
+myRSApubkey=$myRSAkey.pub
+myDSApubkey=$myDSAkey.pub
+# use unique filename to prevent collision on the target server
+mykeys=tmpkeys$$
+
+# Generate a RSA key (with a blank pass-phrase) if one not already there
+if [ ! -f $myRSApubkey ]; then
+  ssh-keygen -t rsa -N "" -f $myRSAkey
+fi
+
+# Generate a DSA key (with a blank pass-phrase) if one not already there
+if [ ! -f $myDSApubkey ]; then
+  ssh-keygen -t dsa -N "" -f $myDSAkey
+fi
+
+# Add my public keys to the authorized keys, then delete it
+/bin/cat $myRSApubkey $myDSApubkey | ssh $1@$2 "/bin/cat > $mykeys; /bin/grep rsa $mykeys >> ~/.ssh/authorized_keys; /bin/chmod 640 ~/.ssh/authorized_keys; /bin/grep dss $mykeys >> ~/.ssh/authorized_keys2; /bin/chmod 640 ~/.ssh/authorized_keys2; rm -f $mykeys"
+
