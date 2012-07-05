@@ -2,7 +2,6 @@
 .bundle/
 coverage/
 vendor/bundle_gems
-vendor/cache/*.gem
 *.tmproj
 *.swp
 .idea/

@@ -18,12 +18,15 @@ export CATALINA_OPTS="-Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.managem
 export MAVEN_OPTS="-Xmx1024m -Xms512m"
 export REBEL_HOME=/Applications/Tools/jrebel
 export ACTIVEMQ_HOME=/Applications/Tools/apache-activemq-5.5.1
+export HADOOP_HOME=/Applications/Tools/hadoop
+export HADOOP_VERSION=1.0.3
 export MYSQL_HOME=/usr/local/mysql
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/bin/gcc-4.2
 export GEM_HOME=~/.gem
 export GEM_PATH=$GEM_HOME
-export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH
+export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
+export AWS_CREDENTIAL_FILE=$HOME/Documents/workspace/bigdata/credentials.json
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
