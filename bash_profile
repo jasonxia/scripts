@@ -28,6 +28,9 @@ export GEM_PATH=$GEM_HOME
 export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
 export AWS_CREDENTIAL_FILE=$HOME/Documents/workspace/bigdata/credentials.json
 
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
+
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
     echo "("${ref#refs/heads/}") ";
