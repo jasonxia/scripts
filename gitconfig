@@ -35,5 +35,17 @@
   co = checkout
   st = status
   di = diff
+  dc = diff --cached
   ci = commit
+  amend = commit --amend
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[merge]
+  summary = true
+  verbosity = 1
+
+[apply]
+  whitespace = nowarn
