@@ -1,7 +1,7 @@
 alias ll='ls -al'
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias be='bundle exec'
-alias mount_ad='sshfs yxia@ad-dev01.dev.int:/web/home/yxia/agentdesktop ~/REA/agentdesktop'
+alias mount_ad='sshfs yxia@ad-dev01.dev.int.realestate.com.au:/web/home/yxia ~/REA/AD1'
 alias tomcat='cd ${CATALINA_HOME}'
 alias start-tomcat='rm -rf $CATALINA_HOME/work && $CATALINA_HOME/bin/startup.sh'
 alias stop-tomcat='$CATALINA_HOME/bin/shutdown.sh'
