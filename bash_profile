@@ -1,5 +1,4 @@
 alias ll='ls -al'
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias be='bundle exec'
 alias mount_ad='sshfs yxia@ad-dev01.dev.int.realestate.com.au:/web/home/yxia ~/REA/AD1'
 alias tomcat='cd ${CATALINA_HOME}'
@@ -9,7 +8,7 @@ alias tomcat-log='tail -f ${CATALINA_HOME}/logs/catalina.out'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home
 export JAVA_OPTS="-Xmx768M -XX:MaxPermSize=256m -Djava.awt.headless=false -ea:com.localmatters... -ea:com.aptas... -Dfile.encoding=UTF-8 -Dorg.apache.tomcat.util.buf.UDecoder.ALLO"
 export JBOSS_HOME=/Applications/Tools/jboss-soa-p.4.3.0/jboss-as
 export TOMCAT_HOME=/Applications/Tools/apache-tomcat
@@ -22,7 +21,7 @@ export HADOOP_HOME=/Applications/Tools/hadoop
 export HADOOP_VERSION=1.0.3
 export MYSQL_HOME=/usr/local/mysql
 export ARCHFLAGS="-arch x86_64"
-export CC=/usr/bin/gcc-4.2
+export CC=/usr/local/bin/gcc-4.2
 export GEM_HOME=~/.gem
 export GEM_PATH=$GEM_HOME
 export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
