@@ -13,6 +13,7 @@ export JAVA_OPTS="-Xmx768M -XX:MaxPermSize=256m -Djava.awt.headless=false -ea:co
 export JBOSS_HOME=/Applications/Tools/jboss-soa-p.4.3.0/jboss-as
 export TOMCAT_HOME=/Applications/Tools/apache-tomcat
 export CATALINA_HOME=/Applications/Tools/apache-tomcat
+export CATALINA_BASE=$CATALINA_HOME
 export CATALINA_OPTS="-Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 export MAVEN_OPTS="-Xmx1024m -Xms512m"
 export REBEL_HOME=/Applications/Tools/jrebel
@@ -34,7 +35,7 @@ function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
     echo "("${ref#refs/heads/}") ";
 }
-PS1="G'Day!\u [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
+PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)]\[\033[0m\] [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
@@ -48,3 +49,5 @@ source ~/REA/bash/mysql/aliases/bash
 popd > /dev/null
 
 source /Users/yongmin_xia/REA/cp-auth/script/app-config.sh
+export CP_DOMAIN_ENV=development
+export SHARED_COMPONENTS_ENV=development
