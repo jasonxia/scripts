@@ -35,7 +35,7 @@ function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
     echo "("${ref#refs/heads/}") ";
 }
-PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)]\[\033[0m\] [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
+PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)\[\033[0m\]] [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
