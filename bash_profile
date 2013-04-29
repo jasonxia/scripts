@@ -26,7 +26,7 @@ export CC=/usr/local/bin/gcc-4.2
 export GEM_HOME=~/.gem
 export GEM_PATH=$GEM_HOME
 export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
-export AWS_CREDENTIAL_FILE=$HOME/Documents/workspace/bigdata/credentials.json
+export AWS_CREDENTIAL_FILE=~/Documents/AWS/credentials.json
 
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
@@ -37,8 +37,8 @@ function git_branch {
 }
 PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)\[\033[0m\]] [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 pushd ~/toolbox/mysql/aliases >  /dev/null
 # use my ~/.my.cfg too!
@@ -51,3 +51,4 @@ popd > /dev/null
 source /Users/yongmin_xia/REA/cp-auth/script/app-config.sh
 export CP_DOMAIN_ENV=development
 export SHARED_COMPONENTS_ENV=development
+source ~/.aws/.rea/test/aws-env.sh
