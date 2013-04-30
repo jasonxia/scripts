@@ -23,13 +23,13 @@ export HADOOP_VERSION=1.0.3
 export MYSQL_HOME=/usr/local/mysql
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/local/bin/gcc-4.2
-export GEM_HOME=~/.gem
-export GEM_PATH=$GEM_HOME
-export PATH=$HOME/bin:$MYSQL_HOME/bin:$GEM_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
+export PATH=$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
 export AWS_CREDENTIAL_FILE=~/Documents/AWS/credentials.json
 
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
+
+eval "$(rbenv init -)"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
@@ -38,7 +38,6 @@ function git_branch {
 PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)\[\033[0m\]] [\[\033[1;32m\]\w\[\033[0m] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0m\]$ "
 
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 pushd ~/toolbox/mysql/aliases >  /dev/null
 # use my ~/.my.cfg too!
