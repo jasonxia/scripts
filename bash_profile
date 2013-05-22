@@ -39,6 +39,9 @@ PS1="[\[\033[0m\]\[\033[1;34m\]\$(date +%k:%M:%S)\[\033[0m\]] [\[\033[1;32m\]\w\
 
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
+# AWS command completion
+complete -C aws_completer aws
+
 pushd ~/toolbox/mysql/aliases >  /dev/null
 # use my ~/.my.cfg too!
 ./bash | sed 's/--defaults-file=/--defaults-extra-file=/' > /tmp/${USER}-aliases
@@ -51,3 +54,4 @@ source /Users/yongmin_xia/REA/cp-auth/script/app-config.sh
 export CP_DOMAIN_ENV=development
 export SHARED_COMPONENTS_ENV=development
 source ~/.aws/.rea/test/aws-env.sh
+source ~/REA/calculon/config/development.sh
