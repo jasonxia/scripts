@@ -47,11 +47,16 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 alias ll='ls -al'
 alias be='bundle exec'
+alias grep="grep --color=auto"
 alias mount_ad='sshfs yxia@ad-dev01.dev.int.realestate.com.au:/web/home/yxia ~/REA/AD1'
 alias tomcat='cd ${CATALINA_HOME}'
 alias start-tomcat='rm -rf $CATALINA_HOME/work && $CATALINA_HOME/bin/startup.sh'
 alias stop-tomcat='$CATALINA_HOME/bin/shutdown.sh'
 alias tomcat-log='tail -f ${CATALINA_HOME}/logs/catalina.out'
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -71,7 +76,6 @@ export MYSQL_HOME=/usr/local/mysql
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/local/bin/gcc-4.2
 export PATH=$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
-export AWS_CREDENTIAL_FILE=~/Documents/AWS/credentials.json
 
 eval "$(rbenv init -)"
 
@@ -80,8 +84,10 @@ eval "$(rbenv init -)"
 # AWS command completion
 source /usr/local/bin/aws_zsh_completer.sh
 
-source /Users/yongmin_xia/REA/cp-auth/script/app-config.sh
+export AWS_CREDENTIAL_FILE=~/Documents/AWS/credentials.json
+source ~/.aws/.rea/test/aws-env.sh
+
 export CP_DOMAIN_ENV=development
 export SHARED_COMPONENTS_ENV=development
-source ~/.aws/.rea/test/aws-env.sh
+source /Users/yongmin_xia/REA/cp-auth/script/app-config.sh
 source ~/REA/calculon/config/development.sh
