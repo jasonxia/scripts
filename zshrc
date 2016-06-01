@@ -59,17 +59,15 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+alias docker-export='eval "$(docker-machine env dev)"'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TZ="Australia/Melbourne"
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/yongmin_xia/.boot2docker/certs/boot2docker-vm
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
 export JAVA_OPTS="-Xmx1024M -Djava.awt.headless=false -ea:com.localmatters... -ea:com.aptas... -Dfile.encoding=UTF-8 -Dorg.apache.tomcat.util.buf.UDecoder.ALLO.ALLOW_ENCODED_SLASH=true -Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true"
-export SBT_OPTS="-Xmx1024M -XX:MaxPermSize=512M"
-export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=512M -Xms512m"
+export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 export TOMCAT_HOME=/usr/local/Cellar/tomcat/8.0.26/libexec
 export CATALINA_HOME=/usr/local/Cellar/tomcat/8.0.26/libexec
 export CATALINA_BASE=$CATALINA_HOME
@@ -85,4 +83,6 @@ eval "$(jenv init -)"
 
 # AWS command completion
 source /usr/local/bin/aws_zsh_completer.sh
+source ~/bin/idp_authenticate
 
+compctl -g '~/.teamocil/*(:t:r)' teamocil
