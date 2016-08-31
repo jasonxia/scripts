@@ -65,7 +65,6 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TZ="Australia/Melbourne"
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
 export JAVA_OPTS="-Xmx1024M -Djava.awt.headless=false -ea:com.localmatters... -ea:com.aptas... -Dfile.encoding=UTF-8 -Dorg.apache.tomcat.util.buf.UDecoder.ALLO.ALLOW_ENCODED_SLASH=true -Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true"
 export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 export TOMCAT_HOME=/usr/local/Cellar/tomcat/8.0.26/libexec
@@ -80,6 +79,8 @@ export PATH=$HOME/.jenv/bin:$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr
 eval "$(rbenv init -)"
 eval "$(jenv init -)"
 [[ -s "$(brew --prefix nvm)/nvm.sh" ]] && source "$(brew --prefix nvm)/nvm.sh"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
 
 # AWS command completion
 source /usr/local/bin/aws_zsh_completer.sh
