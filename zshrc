@@ -41,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby autojump osx mvn gradle)
+plugins=(git ruby autojump osx mvn gradle zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,7 +78,6 @@ export PATH=$HOME/.jenv/bin:$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr
 
 eval "$(rbenv init -)"
 eval "$(jenv init -)"
-[[ -s "$(brew --prefix nvm)/nvm.sh" ]] && source "$(brew --prefix nvm)/nvm.sh"
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
 
