@@ -50,7 +50,6 @@ alias ll='ls -al'
 alias be='bundle exec'
 alias br='bundle exec rspec'
 alias grep="grep --color=auto"
-alias mount_ad='sshfs yxia@ad-dev01.dev.int.realestate.com.au:/web/home/yxia ~/REA/AD1'
 alias tomcat='cd ${CATALINA_HOME}'
 alias start-tomcat='rm -rf $CATALINA_HOME/work && $CATALINA_HOME/bin/startup.sh'
 alias stop-tomcat='$CATALINA_HOME/bin/shutdown.sh'
@@ -79,10 +78,12 @@ export PATH=$HOME/.jenv/bin:$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr
 eval "$(rbenv init -)"
 eval "$(jenv init -)"
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
 
 # AWS command completion
 source /usr/local/bin/aws_zsh_completer.sh
-source ~/bin/idp_authenticate
 
 compctl -g '~/.teamocil/*(:t:r)' teamocil
+
+export NVM_DIR="/Users/xiay/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
