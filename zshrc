@@ -58,7 +58,8 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
-alias docker-export='eval "$(docker-machine env dev)"'
+alias docker-export='eval "$(docker-machine env default)"'
+alias yar='/Users/xiay/.nvm/versions/node/v7.0.0/bin/yarn'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -73,10 +74,13 @@ export CATALINA_OPTS="-Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.managem
 export MYSQL_HOME=/usr/local/Cellar/mysql
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/bin/gcc
-export PATH=$HOME/.jenv/bin:$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
+export KAFKA_HOME=/usr/local/Cellar/kafka/0.10.1.0
+export PATH=$HOME/.jenv/bin:$HOME/.pyenv/bin:$HOME/bin:$MYSQL_HOME/bin:$KAFKA_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
 
 eval "$(rbenv init -)"
 eval "$(jenv init -)"
+eval "$(pyenv init -)"
+export WORKON_HOME="~/.venvs"
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
 
@@ -87,3 +91,4 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 export NVM_DIR="/Users/xiay/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
