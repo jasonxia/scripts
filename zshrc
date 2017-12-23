@@ -49,6 +49,8 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -al'
 alias be='bundle exec'
 alias br='bundle exec rspec'
+alias pr='pipenv run'
+alias pp='pipenv run python'
 alias grep="grep --color=auto"
 alias tomcat='cd ${CATALINA_HOME}'
 alias start-tomcat='rm -rf $CATALINA_HOME/work && $CATALINA_HOME/bin/startup.sh'
@@ -58,7 +60,6 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
-alias docker-export='eval "$(docker-machine env default)"'
 alias yar='/Users/xiay/.nvm/versions/node/v7.0.0/bin/yarn'
 
 export CLICOLOR=1
@@ -91,4 +92,8 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 export NVM_DIR="/Users/xiay/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# tabtab source for jhipster package
+# uninstall by removing these lines or running `tabtab uninstall jhipster`
+[[ -f /Users/xiay/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh ]] && . /Users/xiay/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh
 
