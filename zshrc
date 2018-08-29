@@ -63,7 +63,6 @@ export TZ="Australia/Melbourne"
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 export ARCHFLAGS="-arch x86_64"
 export CC=/usr/bin/gcc
-
 export MYSQL_HOME=/usr/local/Cellar/mysql
 export PATH=$HOME/.jenv/bin:$HOME/.pyenv/bin:$HOME/bin:$MYSQL_HOME/bin:$PATH:/usr/local/sbin
 
@@ -78,3 +77,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export JAVA_HOME=`/usr/libexec/java_home`
