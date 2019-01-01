@@ -42,7 +42,7 @@ ZSH_THEME="dracula"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby autojump osx mvn gradle zsh-nvm zsh-syntax-highlighting)
+plugins=(git ruby autojump osx mvn gradle zsh-nvm docker zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,5 +78,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_181`
-
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`

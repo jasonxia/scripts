@@ -3,6 +3,9 @@ alias be='bundle exec'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export JAVA_OPTS="-Xmx768M -XX:MaxPermSize=256m -Djava.awt.headless=false -ea:com.localmatters... -ea:com.aptas... -Dfile.encoding=UTF-8 -Dorg.apache.tomcat.util.buf.UDecoder.ALLO"
+export MAVEN_OPTS="-Xmx1024m -Xms512m"
+export PATH=$HOME/bin:$MYSQL_HOME/bin:$REBEL_HOME/bin:$PATH:/usr/local/sbin
 
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
@@ -22,8 +25,6 @@ complete -C aws_completer aws
 
 #export AWS_CREDENTIAL_FILE=~/Documents/AWS/credentials.json
 #source ~/.aws/.rea/test/aws-env.sh
-
-source ~/Projects/Ops/aws-idp/adfs_authenticate.sh
 
 export ANSIBLE_MSSQL_REPO_PATH=~/Projects/Ops/ansible-mssql/
 export DNS_PATH=~/Projects/Ops/dns/
