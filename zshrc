@@ -57,6 +57,7 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+alias weather='curl wttr.in'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -66,6 +67,9 @@ export ARCHFLAGS="-arch x86_64"
 export CC=/usr/bin/gcc
 export MYSQL_HOME=/usr/local/Cellar/mysql
 export PATH=$HOME/.jenv/bin:$HOME/.pyenv/bin:$HOME/bin:$MYSQL_HOME/bin:$PATH:/usr/local/sbin
+export CXXFLAGS="-mmacosx-version-min=10.9"
+export LDFLAGS="-mmacosx-version-min=10.9"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 compctl -g '~/.teamocil/*(:t:r)' teamocil
 
@@ -79,3 +83,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export HTTP_PROXY=http://www-proxy-syd.au.oracle.com:80
+export HTTPS_PROXY=http://www-proxy-syd.au.oracle.com:80
+export NO_PROXY=localhost,127.0.0.1,artifacthub-tip.oraclecorp.com,artifacthub.oraclecorp.com,100.104.176.23,100.77.1.22
